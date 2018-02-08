@@ -11,20 +11,28 @@ The Training Attendance program allows training participants to send their prese
 
 To start the program:
 	1. Extract the zip/tar distribution package
-	2. Run the DelcarePresent file to send your name to the Solace VMR
+	2. Run the run\DelcarePresent file to send your name to the Solace VMR
 	3. From a command line, run the file with the following arguments:
 	
 		java -jar DeclarePresent.jar <VMR-IP> <your/name>
 		
-		Where <your/name> is in the format of <first-name/last-name>
+		Where <VMR-IP> is the Solace VMR IP or hostname, and <your/name> is in the format of <first-name/last-name>
 		
 		Ex: java -jar DeclarePresent.jar 192.168.56.103 leah/robert
 		
+To retrieve the names of those who have declared their presense:
+
+		java -jar TakeAttendance.jar <VMR-IP>
+		
+		Where <VMR-IP> is the Solace VMR IP or hostname
+		
+		Ex: java -jar TakeAttendance.jar 192.168.56.103
+
 Alternatively, Solace's sdkperf command line tool can be used to delcare your presence. 
 
 		sdkperf_java.bat -cip=<VMR-IP> -cu=student@attendance -ptl=<your/name> -mn=1 -mt=persistent
 
-		Where <your/name> is in the format of <first-name/last-name>
+		Where <VMR-IP> is the Solace VMR IP or hostname, and <your/name> is in the format of <first-name/last-name>
 		
 		Ex: sdkperf_java.bat -cip=192.168.56.103 -cu=student@attendance -ptl=leah/robert -mn=1 -mt=persistent
 		
