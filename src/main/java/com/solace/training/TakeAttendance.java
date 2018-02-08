@@ -76,8 +76,10 @@ public class TakeAttendance {
         final FlowReceiver cons = session.createFlow(new XMLMessageListener() {
             @Override
             public void onReceive(BytesXMLMessage msg) {
-                System.out.printf("%s%n", msg.getDestination());
-                writer.println(msg.getDestination());
+                String name = msg.getDestination().toString();
+                name = name.replace('/', ' ');
+                System.out.printf("%s%n", name);
+                writer.println(name);
                 // When the ack mode is set to SUPPORTED_MESSAGE_ACK_CLIENT,
                 // guaranteed delivery messages are acknowledged after
                 // processing
