@@ -10,9 +10,9 @@ The Training Attendance program allows training participants to send their prese
 ## Usage
 
 To start the program:
-	1. Extract the zip/tar distribution package
-	2. Run the run\DelcarePresent file to send your name to the Solace VMR
-	3. From a command line, run the file with the following arguments:
+1. Extract the zip/tar distribution package
+2. Run the run\DeclarePresent file to send your name to the Solace VMR
+3. From a command line, run the file with the following arguments:
 	
 		java -jar DeclarePresent.jar <VMR-IP> <your/name>
 		
